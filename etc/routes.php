@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Obelaw\Permissions\Livewire\Admins\CreateAdminComponent;
 use Obelaw\Permissions\Livewire\Admins\IndexAdminsComponent;
 use Obelaw\Permissions\Livewire\Admins\UpdateAdminComponent;
+use Obelaw\Permissions\Livewire\Rules\CreateRuleComponent;
+use Obelaw\Permissions\Livewire\Rules\IndexRulesComponent;
+use Obelaw\Permissions\Livewire\Rules\PermissionsRuleComponent;
+use Obelaw\Permissions\Livewire\Rules\UpdateRuleComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +29,12 @@ Route::prefix('permissions')->group(function () {
         Route::get('/', IndexAdminsComponent::class)->name('obelaw.permissions.admins.index');
         Route::get('/create', CreateAdminComponent::class)->name('obelaw.permissions.admins.create');
         Route::get('/{admin}/update', UpdateAdminComponent::class)->name('obelaw.permissions.admins.update');
+    });
+    
+    Route::prefix('rules')->group(function () {
+        Route::get('/', IndexRulesComponent::class)->name('obelaw.permissions.rules.index');
+        Route::get('/create', CreateRuleComponent::class)->name('obelaw.permissions.rules.create');
+        Route::get('/{rule}/update', UpdateRuleComponent::class)->name('obelaw.permissions.rules.update');
+        Route::get('/{rule}/permissions', PermissionsRuleComponent::class)->name('obelaw.permissions.rules.permissions');
     });
 });

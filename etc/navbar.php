@@ -16,6 +16,14 @@ return new class
             icon: 'user-shield',
             label: 'Admins',
             href: 'obelaw.permissions.admins.index',
+            permission: 'Admins',
+        );
+
+        $links->link(
+            icon: 'gavel',
+            label: 'Rules',
+            href: 'obelaw.permissions.rules.index',
+            permission: 'Rules',
         );
     }
 };
