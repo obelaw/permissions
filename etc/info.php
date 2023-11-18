@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'name' => 'NameModule',
-    'icon' => 'percentage',
-    'href' => 'obelaw.namemodule.home',
-    'slug' => 'namemodule',
+    'name' => 'Permissions',
+    'icon' => 'lock-square-rounded',
+    'href' => 'obelaw.permissions.home',
+    'helper' => true,
 ];

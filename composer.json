@@ -1,11 +1,11 @@
 {
-    "name": "obelaw/name-module",
+    "name": "obelaw/permissions-helper-module",
     "autoload": {
         "files": [
             "obelaw.php"
         ],
         "psr-4": {
-            "Obelaw\\NameModule\\": "src/"
+            "Obelaw\\Permissions\\": "src/"
         }
     },
     "authors": [
@@ -14,12 +14,5 @@
             "email": "komicho1996@gmail.com"
         }
     ],
-    "require": {},
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Obelaw\\NameModule\\ObelawNameModuleServiceProvider"
-            ]
-        }
-    }
+    "require": {}
 }

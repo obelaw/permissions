@@ -6,10 +6,10 @@ return new class
 {
     public function navbar(Links $links)
     {
-        // $links->link(
-        //     icon: 'home-2',
-        //     label: 'Home',
-        //     href: 'obelaw.namemodule.home',
-        // );
+        $links->link(
+            icon: 'home-2',
+            label: 'Home',
+            href: 'obelaw.permissions.home',
+        );
     }
 };

@@ -1,10 +1,10 @@
 <?php
 
-namespace Obelaw\NameModule;
+namespace Obelaw\Permissions;
 
-use Illuminate\Support\ServiceProvider;
+use Obelaw\Framework\Base\ServiceProviderBase;
 
-class ObelawNameModuleServiceProvider extends ServiceProvider
+class ObelawPermissionsServiceProvider extends ServiceProviderBase
 {
 
     /**
@@ -24,6 +24,6 @@ class ObelawNameModuleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'obelaw-namemodule');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'obelaw-permissions');
     }
 }
