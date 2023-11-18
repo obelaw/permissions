@@ -11,5 +11,11 @@ return new class
             label: 'Home',
             href: 'obelaw.permissions.home',
         );
+
+        $links->link(
+            icon: 'user-shield',
+            label: 'Admins',
+            href: 'obelaw.permissions.admins.index',
+        );
     }
 };
