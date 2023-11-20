@@ -3,11 +3,11 @@
 namespace Obelaw\Permissions\Livewire;
 
 use Livewire\Component;
-use Obelaw\Framework\ACL\Attributes\PermissionAttribute;
+use Obelaw\Framework\ACL\Attributes\PermissionAccess;
 use Obelaw\Framework\ACL\Traits\BootPermission;
 use Obelaw\Framework\Views\Layout\DashboardLayout;
 
-#[PermissionAttribute('obelaw_helper_permissions')]
+#[PermissionAccess('obelaw_helper_permissions')]
 class HomeComponent extends Component
 {
     use BootPermission;

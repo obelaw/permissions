@@ -36,20 +36,20 @@
                                         {{ $module }}
                                     </div>
                                     <div style="padding-left: 21px">
-                                        @foreach ($sections as $section => $permissions)
+                                        @foreach ($sections as $section)
                                             <label class="form-check">
                                                 <input wire:model.defer="permissions" name="permissions"
                                                     class="form-check-input" type="checkbox"
-                                                    value="{{ $section }}">
-                                                <span class="form-check-label">{{ $section }}</span>
+                                                    value="{{ $section['permission'] }}">
+                                                <span class="form-check-label">{{ $section['label'] }}</span>
                                             </label>
                                             <div style="padding-left: 21px">
-                                                @foreach ($permissions as $permission)
+                                                @foreach ($section['permissions'] as $permission)
                                                     <label class="form-check">
                                                         <input wire:model.defer="permissions" name="permissions"
                                                             class="form-check-input" type="checkbox"
-                                                            value="{{ $permission }}">
-                                                        <span class="form-check-label">{{ $permission }}</span>
+                                                            value="{{ $permission['permission'] }}">
+                                                        <span class="form-check-label">{{ $permission['label'] }}</span>
                                                     </label>
                                                 @endforeach
                                             </div>

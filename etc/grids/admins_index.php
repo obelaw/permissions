@@ -6,6 +6,7 @@ use Obelaw\Framework\Builder\Build\Grid\{
     Table,
     Bottom
 };
+use Obelaw\Framework\Builder\Build\Common\RouteAction;
 
 return new class
 {
@@ -32,9 +33,8 @@ return new class
 
     public function CTA(CTA $CTA)
     {
-        $CTA->setCall('Update', CTA::call(
-            type: 'route',
-            route: 'obelaw.permissions.admins.update',
+        $CTA->setCall('Update', new RouteAction(
+            href: 'obelaw.permissions.admins.update',
             permission: 'permissions_admin_update',
         ));
     }

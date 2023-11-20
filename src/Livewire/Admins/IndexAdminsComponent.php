@@ -2,10 +2,10 @@
 
 namespace Obelaw\Permissions\Livewire\Admins;
 
-use Obelaw\Framework\ACL\Attributes\PermissionAttribute;
+use Obelaw\Framework\ACL\Attributes\PermissionAccess;
 use Obelaw\Framework\Base\GridBase;
 
-#[PermissionAttribute('permissions_admin_index')]
+#[PermissionAccess('permissions_admin_index')]
 class IndexAdminsComponent extends GridBase
 {
     public $gridId = 'obelaw_helper_permissions_admins_index';

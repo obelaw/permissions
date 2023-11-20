@@ -3,14 +3,14 @@
 namespace Obelaw\Permissions\Livewire\Rules;
 
 use Livewire\Component;
-use Obelaw\Framework\ACL\Attributes\PermissionAttribute;
+use Obelaw\Framework\ACL\Attributes\PermissionAccess;
 use Obelaw\Framework\ACL\Models\Rule;
 use Obelaw\Framework\ACL\Traits\BootPermission;
 use Obelaw\Framework\Base\Traits\PushAlert;
 use Obelaw\Framework\Facades\Bundles;
 use Obelaw\Framework\Views\Layout\DashboardLayout;
 
-#[PermissionAttribute('permissions_rule_permissions_update')]
+#[PermissionAccess('permissions_rule_permissions_update')]
 class PermissionsRuleComponent extends Component
 {
     use BootPermission;
@@ -35,8 +35,9 @@ class PermissionsRuleComponent extends Component
 
     public function submit()
     {
-        $this->rule->permissions = $this->permissions;
-        $this->rule->save();
+        $this->rule->update([
+            'permissions' => $this->permissions,
+        ]);
 
         $this->pushAlert('success', 'The permissions has been update');
     }
