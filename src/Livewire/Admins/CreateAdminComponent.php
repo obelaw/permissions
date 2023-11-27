@@ -3,12 +3,12 @@
 namespace Obelaw\Permissions\Livewire\Admins;
 
 use Illuminate\Support\Facades\Hash;
-use Obelaw\Framework\ACL\Attributes\PermissionAccess;
+use Obelaw\UI\Permissions\Access;
 use Obelaw\Framework\ACL\Models\Admin;
-use Obelaw\Framework\Base\FromBase;
+use Obelaw\UI\Renderer\FormRender;
 
-#[PermissionAccess('permissions_admin_create')]
-class CreateAdminComponent extends FromBase
+#[Access('permissions_admin_create')]
+class CreateAdminComponent extends FormRender
 {
     public $formId = 'obelaw_helper_permissions_admin_form';
 

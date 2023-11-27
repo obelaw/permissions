@@ -1,8 +1,8 @@
 <?php
 
 use Obelaw\Framework\ACL\Models\Rule;
-use Obelaw\Framework\Builder\Contracts\FieldType;
-use Obelaw\Framework\Builder\Form\Fields;
+use Obelaw\Schema\Form\Fields;
+use Obelaw\Schema\Form\FieldType;
 
 return new class
 {

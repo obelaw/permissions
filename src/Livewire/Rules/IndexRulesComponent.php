@@ -2,11 +2,11 @@
 
 namespace Obelaw\Permissions\Livewire\Rules;
 
-use Obelaw\Framework\ACL\Attributes\PermissionAccess;
-use Obelaw\Framework\Base\GridBase;
+use Obelaw\UI\Permissions\Access;
+use Obelaw\UI\Renderer\GridRender;
 
-#[PermissionAccess('permissions_rules_index')]
-class IndexRulesComponent extends GridBase
+#[Access('permissions_rules_index')]
+class IndexRulesComponent extends GridRender
 {
     public $gridId = 'obelaw_helper_permissions_rules_index';
 

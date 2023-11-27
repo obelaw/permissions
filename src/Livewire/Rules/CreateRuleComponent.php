@@ -2,12 +2,12 @@
 
 namespace Obelaw\Permissions\Livewire\Rules;
 
-use Obelaw\Framework\ACL\Attributes\PermissionAccess;
+use Obelaw\UI\Permissions\Access;
 use Obelaw\Framework\ACL\Models\Rule;
-use Obelaw\Framework\Base\FromBase;
+use Obelaw\UI\Renderer\FormRender;
 
-#[PermissionAccess('permissions_rule_create')]
-class CreateRuleComponent extends FromBase
+#[Access('permissions_rule_create')]
+class CreateRuleComponent extends FormRender
 {
     public $formId = 'obelaw_helper_permissions_rule_form';
 

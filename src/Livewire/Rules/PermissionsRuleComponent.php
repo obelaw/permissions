@@ -3,14 +3,14 @@
 namespace Obelaw\Permissions\Livewire\Rules;
 
 use Livewire\Component;
-use Obelaw\Framework\ACL\Attributes\PermissionAccess;
+use Obelaw\UI\Permissions\Access;
 use Obelaw\Framework\ACL\Models\Rule;
-use Obelaw\Framework\ACL\Traits\BootPermission;
+use Obelaw\UI\Permissions\Traits\BootPermission;
 use Obelaw\Framework\Base\Traits\PushAlert;
-use Obelaw\Framework\Facades\Bundles;
-use Obelaw\Framework\Views\Layout\DashboardLayout;
+use Obelaw\Facades\Bundles;
+use Obelaw\UI\Views\Layout\DashboardLayout;
 
-#[PermissionAccess('permissions_rule_permissions_update')]
+#[Access('permissions_rule_permissions_update')]
 class PermissionsRuleComponent extends Component
 {
     use BootPermission;
