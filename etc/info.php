@@ -10,7 +10,7 @@ return new class
             name: 'Permissions',
             icon: 'lock-square-rounded',
             href: 'obelaw.permissions.home',
-            helper: true
+            group: 'helper_modules',
         );
     }
 };
