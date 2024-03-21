@@ -20,17 +20,20 @@ class UpdateAdminComponent extends FormRender
     public function mount(Admin $admin)
     {
         $this->admin = $admin;
-        $this->rule_id = $admin->rule_id;
-        $this->name = $admin->name;
-        $this->email = $admin->email;
-        $this->status = $admin->status;
+
+        $this->setInputs([
+            'rule_id' => $admin->rule_id,
+            'name' => $admin->name,
+            'email' => $admin->email,
+            'status' => $admin->status,
+        ]);
     }
 
     public function submit()
     {
-        $validateData = $this->validate();
+        $validateData = $this->getInputs();
 
-        if ($validateData['password']) {
+        if (isset($validateData['password'])) {
             $validateData['password'] = Hash::make($validateData['password']);
         } else {
             unset($validateData['password']);
