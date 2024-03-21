@@ -19,12 +19,15 @@ class UpdateRuleComponent extends FormRender
     public function mount(Rule $rule)
     {
         $this->rule = $rule;
-        $this->name = $rule->name;
+
+        $this->setInputs([
+            'name' => $rule->name,
+        ]);
     }
 
     public function submit()
     {
-        $validateData = $this->validate();
+        $validateData = $this->getInputs();
 
         $this->rule->update($validateData);
 

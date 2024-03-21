@@ -16,14 +16,14 @@ class CreateRuleComponent extends FormRender
 
     public function submit()
     {
-        $validateData = $this->validate();
+        $validateData = $this->getInputs();
 
         $validateData['permissions'] = [];
 
-        Rule::create($validateData);
+        $rule = Rule::create($validateData);
 
         $this->pushAlert('success', 'The rule has been created');
 
-        return redirect()->route('obelaw.permissions.rules.permissions');
+        return redirect()->route('obelaw.permissions.rules.permissions', [$rule]);
     }
 }

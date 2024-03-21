@@ -16,6 +16,7 @@ class PermissionsRuleComponent extends Component
     use BootPermission;
     use PushAlert;
 
+    public $rule = null;
     public $allPermissions = false;
     public $permissions = [];
 
