@@ -5,7 +5,7 @@ namespace Obelaw\Permissions\Livewire\Rules;
 use Livewire\Component;
 use Obelaw\UI\Permissions\Access;
 use Obelaw\Framework\ACL\Models\Rule;
-use Obelaw\UI\Permissions\Traits\BootPermission;
+use Obelaw\Permissions\Traits\BootPermission;
 use Obelaw\Framework\Base\Traits\PushAlert;
 use Obelaw\Facades\Bundles;
 use Obelaw\UI\Views\Layout\DashboardLayout;

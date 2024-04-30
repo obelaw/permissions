@@ -2,7 +2,8 @@
     "name": "obelaw/permissions",
     "autoload": {
         "files": [
-            "obelaw.php"
+            "obelaw.php",
+            "helpers/autoload.php"
         ],
         "psr-4": {
             "Obelaw\\Permissions\\": "src/"

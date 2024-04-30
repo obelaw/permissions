@@ -1,5 +1,5 @@
 <?php
 
 return [
-    '/vendor/obelaw/permissions-helper-module/database/migrations',
+    '/vendor/obelaw/permissions/database/migrations',
 ];
