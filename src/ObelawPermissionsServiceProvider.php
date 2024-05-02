@@ -62,7 +62,7 @@ class ObelawPermissionsServiceProvider extends ServiceProvider
             ACLPluginCompile::class,
         ]);
 
-        MiddlewareManager::addMiddleware(PermissionMiddleware::class);
+        MiddlewareManager::addMiddleware(PermissionMiddleware::class, 9);
 
         Livewire::component('obelaw-auth-login', LoginPage::class);
 
