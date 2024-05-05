@@ -4,7 +4,7 @@ namespace Obelaw\Permissions\Compiles\Scan\Modules;
 
 use Illuminate\Console\OutputStyle;
 use Obelaw\Compiles\Abstracts\Compile;
-use Obelaw\Schema\ACL\Section;
+use Obelaw\UI\Schema\ACL\Section;
 
 class ACLCompile extends Compile
 {

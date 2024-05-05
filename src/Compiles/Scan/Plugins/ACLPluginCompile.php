@@ -5,7 +5,7 @@ namespace Obelaw\Permissions\Compiles\Scan\Plugins;
 use Illuminate\Console\OutputStyle;
 use Obelaw\Compiles\Scan\Modules\ACLCompile;
 use Obelaw\Facades\Bundles;
-use Obelaw\Schema\ACL\Section;
+use Obelaw\UI\Schema\ACL\Section;
 
 class ACLPluginCompile extends ACLCompile
 {

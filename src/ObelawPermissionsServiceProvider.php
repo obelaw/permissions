@@ -4,10 +4,7 @@ namespace Obelaw\Permissions;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use Obelaw\Facades\Compile;
 use Obelaw\Framework\Facades\MiddlewareManager;
-use Obelaw\Permissions\Compiles\Scan\Modules\ACLCompile;
-use Obelaw\Permissions\Compiles\Scan\Plugins\ACLPluginCompile;
 use Obelaw\Permissions\Http\Middleware\PermissionMiddleware;
 use Obelaw\Permissions\Livewire\Admins\CreateAdminComponent;
 use Obelaw\Permissions\Livewire\Admins\IndexAdminsComponent;
@@ -54,13 +51,14 @@ class ObelawPermissionsServiceProvider extends ServiceProvider
 
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
-        Compile::mergeModuleScaneers([
-            ACLCompile::class,
-        ]);
+        // BundlesScaneers::mergeModuleScaneers(function (Scaneer $scaneers) {
+        //     $scaneers->add(ACLCompile::class);
+        // });
 
-        Compile::mergePluginScaneers([
-            ACLPluginCompile::class,
-        ]);
+        // BundlesScaneers::mergeModuleScaneers(function (Scaneer $scaneers) {
+        //     $scaneers->add(ACLPluginCompile::class);
+        // });
+
 
         MiddlewareManager::addMiddleware(PermissionMiddleware::class, 9);
 
