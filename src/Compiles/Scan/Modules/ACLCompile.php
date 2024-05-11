@@ -2,7 +2,6 @@
 
 namespace Obelaw\Permissions\Compiles\Scan\Modules;
 
-use Illuminate\Console\OutputStyle;
 use Obelaw\Compiles\Abstracts\Compile;
 use Obelaw\UI\Schema\ACL\Section;
 
@@ -10,13 +9,11 @@ class ACLCompile extends Compile
 {
     public $driverKey = 'obelawACLs';
 
-    public function scanner($modules, OutputStyle $consoleOutput = null)
+    public function scanner($paths)
     {
         $outACL = [];
 
-        $consoleOutput?->writeln('ACLs Compile...');
-
-        foreach ($modules as $id => $path) {
+        foreach ($paths as $id => $path) {
             $pathACLFile = $path . DIRECTORY_SEPARATOR . 'etc' . DIRECTORY_SEPARATOR . 'ACL.php';
 
             if (file_exists($pathACLFile)) {
@@ -31,9 +28,6 @@ class ACLCompile extends Compile
                 $outACL = array_merge($outACL, [$id => $section->getSection()]);
             }
         }
-
-        $consoleOutput?->writeln('ACLs Compiled.');
-        $consoleOutput?->newLine();
 
         return $outACL;
     }

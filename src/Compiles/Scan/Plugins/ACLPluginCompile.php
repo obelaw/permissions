@@ -2,19 +2,15 @@
 
 namespace Obelaw\Permissions\Compiles\Scan\Plugins;
 
-use Illuminate\Console\OutputStyle;
-use Obelaw\Compiles\Scan\Modules\ACLCompile;
 use Obelaw\Facades\Bundles;
+use Obelaw\Permissions\Compiles\Scan\Modules\ACLCompile;
 use Obelaw\UI\Schema\ACL\Section;
 
 class ACLPluginCompile extends ACLCompile
 {
-    public function scanner($paths, OutputStyle $consoleOutput = null)
+    public function scanner($paths)
     {
         $outACL = Bundles::getACLs();
-
-        $consoleOutput?->writeln('ACLs for plugin Compile...');
-
 
         foreach ($paths as $id => $path) {
             $pathACLFile = $path . DIRECTORY_SEPARATOR . 'etc' . DIRECTORY_SEPARATOR . 'ACL.php';
@@ -31,9 +27,6 @@ class ACLPluginCompile extends ACLCompile
                 $outACL = array_merge($outACL, [$id => $section->getSection()]);
             }
         }
-
-        $consoleOutput?->writeln('ACLs for plugin Compiled.');
-        $consoleOutput?->newLine();
 
         return $outACL;
     }

@@ -4,7 +4,10 @@ namespace Obelaw\Permissions;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
+use Obelaw\Facades\Bundles;
 use Obelaw\Framework\Facades\MiddlewareManager;
+use Obelaw\Permissions\Compiles\Scan\Modules\ACLCompile;
+use Obelaw\Permissions\Compiles\Scan\Plugins\ACLPluginCompile;
 use Obelaw\Permissions\Http\Middleware\PermissionMiddleware;
 use Obelaw\Permissions\Livewire\Admins\CreateAdminComponent;
 use Obelaw\Permissions\Livewire\Admins\IndexAdminsComponent;
@@ -14,6 +17,9 @@ use Obelaw\Permissions\Livewire\Rules\CreateRuleComponent;
 use Obelaw\Permissions\Livewire\Rules\IndexRulesComponent;
 use Obelaw\Permissions\Livewire\Rules\PermissionsRuleComponent;
 use Obelaw\Permissions\Livewire\Rules\UpdateRuleComponent;
+use Obelaw\Permissions\Mixin\BundlesMixin;
+use Obelaw\Render\BundlesScaneers;
+use Obelaw\Schema\Scaneer\Scaneer;
 
 class ObelawPermissionsServiceProvider extends ServiceProvider
 {
@@ -51,15 +57,6 @@ class ObelawPermissionsServiceProvider extends ServiceProvider
 
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
-        // BundlesScaneers::mergeModuleScaneers(function (Scaneer $scaneers) {
-        //     $scaneers->add(ACLCompile::class);
-        // });
-
-        // BundlesScaneers::mergeModuleScaneers(function (Scaneer $scaneers) {
-        //     $scaneers->add(ACLPluginCompile::class);
-        // });
-
-
         MiddlewareManager::addMiddleware(PermissionMiddleware::class, 9);
 
         Livewire::component('obelaw-auth-login', LoginPage::class);
@@ -72,5 +69,15 @@ class ObelawPermissionsServiceProvider extends ServiceProvider
         Livewire::component('obelaw-permissions-rules-create', CreateRuleComponent::class);
         Livewire::component('obelaw-permissions-rules-update', UpdateRuleComponent::class);
         Livewire::component('obelaw-permissions-rules-permissions', PermissionsRuleComponent::class);
+
+        BundlesScaneers::mergeModuleScaneers(function (Scaneer $scaneers) {
+            $scaneers->add(ACLCompile::class);
+        });
+
+        BundlesScaneers::mergeModuleScaneers(function (Scaneer $scaneers) {
+            $scaneers->add(ACLPluginCompile::class);
+        });
+
+        Bundles::mixin(new BundlesMixin());
     }
 }
