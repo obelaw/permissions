@@ -3,7 +3,7 @@
 namespace Obelaw\Permissions\Livewire\Rules;
 
 use Livewire\Component;
-use Obelaw\UI\Permissions\Access;
+use Obelaw\Permissions\Attributes\Access;
 use Obelaw\Framework\ACL\Models\Rule;
 use Obelaw\Permissions\Traits\BootPermission;
 use Obelaw\Framework\Base\Traits\PushAlert;

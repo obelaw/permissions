@@ -2,7 +2,7 @@
 
 namespace Obelaw\Permissions\Livewire\Admins;
 
-use Obelaw\UI\Permissions\Access;
+use Obelaw\Permissions\Attributes\Access;
 use Obelaw\UI\Renderer\GridRender;
 
 #[Access('permissions_admin_index')]

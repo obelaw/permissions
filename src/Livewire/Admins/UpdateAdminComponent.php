@@ -3,7 +3,7 @@
 namespace Obelaw\Permissions\Livewire\Admins;
 
 use Illuminate\Support\Facades\Hash;
-use Obelaw\UI\Permissions\Access;
+use Obelaw\Permissions\Attributes\Access;
 use Obelaw\Framework\ACL\Models\Admin;
 use Obelaw\UI\Renderer\FormRender;
 
