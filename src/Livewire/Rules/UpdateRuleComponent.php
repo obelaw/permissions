@@ -3,7 +3,7 @@
 namespace Obelaw\Permissions\Livewire\Rules;
 
 use Obelaw\Permissions\Attributes\Access;
-use Obelaw\Framework\ACL\Models\Rule;
+use Obelaw\Permissions\Models\Rule;
 use Obelaw\UI\Renderer\FormRender;
 
 #[Access('permissions_rule_update')]

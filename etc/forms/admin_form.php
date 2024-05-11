@@ -1,6 +1,6 @@
 <?php
 
-use Obelaw\Framework\ACL\Models\Rule;
+use Obelaw\Permissions\Models\Rule;
 use Obelaw\UI\Schema\Form\Fields;
 use Obelaw\UI\Schema\Form\FieldType;
 

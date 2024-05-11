@@ -1,8 +1,8 @@
 <?php
 
-use Obelaw\Framework\ACL\Models\Rule;
-use Obelaw\UI\Schema\Grid\Button\RouteAction;
+use Obelaw\Permissions\Models\Rule;
 use Obelaw\UI\Schema\Grid\Button;
+use Obelaw\UI\Schema\Grid\Button\RouteAction;
 use Obelaw\UI\Schema\Grid\CTA;
 use Obelaw\UI\Schema\Grid\Table;
 

@@ -3,11 +3,11 @@
 namespace Obelaw\Permissions\Livewire\Rules;
 
 use Livewire\Component;
-use Obelaw\Permissions\Attributes\Access;
-use Obelaw\Framework\ACL\Models\Rule;
-use Obelaw\Permissions\Traits\BootPermission;
-use Obelaw\Framework\Base\Traits\PushAlert;
 use Obelaw\Facades\Bundles;
+use Obelaw\Framework\Base\Traits\PushAlert;
+use Obelaw\Permissions\Attributes\Access;
+use Obelaw\Permissions\Models\Rule;
+use Obelaw\Permissions\Traits\BootPermission;
 use Obelaw\UI\Views\Layout\DashboardLayout;
 
 #[Access('permissions_rule_permissions_update')]

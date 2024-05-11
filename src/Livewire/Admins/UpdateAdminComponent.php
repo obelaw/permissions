@@ -4,7 +4,7 @@ namespace Obelaw\Permissions\Livewire\Admins;
 
 use Illuminate\Support\Facades\Hash;
 use Obelaw\Permissions\Attributes\Access;
-use Obelaw\Framework\ACL\Models\Admin;
+use Obelaw\Permissions\Models\Admin;
 use Obelaw\UI\Renderer\FormRender;
 
 #[Access('permissions_admin_update')]
