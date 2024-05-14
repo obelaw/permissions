@@ -26,10 +26,11 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="row row-cols-3">
+                    <div class="row row-cols-3" data-masonry='{"percentPosition": true }'>
                         @foreach ($ACls as $module => $sections)
                             <div class="col">
-                                <div class="mb-3">
+                                <div class="mb-3"
+                                    style="background: #fffcf6; border-radius: 5px; padding: 15px; margin-bottom: 15px !important;">
                                     <div class="form-label">
                                         <input wire:model.defer="permissions" name="permissions"
                                             class="form-check-input" type="checkbox" value="{{ $module }}">
@@ -68,3 +69,7 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" defer></script>
+@endpush
