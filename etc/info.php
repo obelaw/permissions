@@ -8,7 +8,7 @@ return new class
     {
         $module->info(
             name: 'Permissions',
-            icon: 'lock-square-rounded',
+            icon: 'vendor/obelaw/icons/permissions.svg',
             href: 'obelaw.permissions.home',
             group: 'helper_modules',
         );

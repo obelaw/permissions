@@ -79,5 +79,11 @@ class ObelawPermissionsServiceProvider extends ServiceProvider
         });
 
         Bundles::mixin(new BundlesMixin());
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../resources/icons' => public_path('vendor/obelaw/icons'),
+            ], ['obelaw:icons']);
+        }
     }
 }
